@@ -11,6 +11,7 @@ type LastValidPlacement = Pick<FurnitureItem, "x" | "y" | "rotation" | "width" |
 
 const STORAGE_KEY = "living-room-layout-planner-state-v1";
 const STORAGE_VERSION = 1;
+const API_STATE_PATH = `${import.meta.env.BASE_URL}api/layout-state`;
 const initialSelectedItemId = initialFurniture[1]?.itemId;
 const customCabinetHorizontal = initialFurniture.find((item) => item.itemId === "item-custom-cabinet-horizontal");
 
@@ -152,6 +153,14 @@ function readLocalLayoutState(): PersistedLayoutState | null {
     return raw ? parseLayoutState(JSON.parse(raw)) : null;
   } catch {
     return null;
+  }
+}
+
+function writeLocalLayoutState(state: PersistedLayoutState) {
+  try {
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  } catch {
+    // Saving layout should never block furniture editing.
   }
 }
 
@@ -365,7 +374,12 @@ export default function App() {
       let state: PersistedLayoutState | null = null;
 
       try {
-        const response = await fetch("/api/layout-state", { cache: "no-store" });
+        const response = await fetch(API_STATE_PATH, { cache: "no-store" });
+
+        if (!response.ok) {
+          throw new Error("Layout state API is unavailable");
+        }
+
         const payload = (await response.json()) as unknown;
 
         if (isRecord(payload)) {
@@ -410,7 +424,7 @@ export default function App() {
       savedAt: new Date().toISOString(),
     };
     const timeoutId = window.setTimeout(() => {
-      void fetch("/api/layout-state", {
+      void fetch(API_STATE_PATH, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -420,10 +434,13 @@ export default function App() {
         .then((response) => {
           if (response.ok) {
             window.localStorage.removeItem(STORAGE_KEY);
+            return;
           }
+
+          writeLocalLayoutState(payload);
         })
         .catch(() => {
-          // Keep editing responsive even if the server is temporarily unavailable.
+          writeLocalLayoutState(payload);
         });
     }, 250);
 

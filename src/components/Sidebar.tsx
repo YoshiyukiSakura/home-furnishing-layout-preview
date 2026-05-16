@@ -140,7 +140,7 @@ export function Sidebar({
           <Home size={16} />
           <span>户型参考</span>
         </div>
-        <img src="/reference-plan.svg" alt="户型参考图" />
+        <img src={`${import.meta.env.BASE_URL}reference-plan.svg`} alt="户型参考图" />
       </section>
     </aside>
   );
