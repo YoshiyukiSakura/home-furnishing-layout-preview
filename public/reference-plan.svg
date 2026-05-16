@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="813" height="966" viewBox="0 0 813 966" role="img" aria-label="客餐厅户型参考示意图">
+  <rect width="813" height="966" fill="#f3f7f3"/>
+  <g transform="translate(92 82)">
+    <rect x="0" y="0" width="430" height="600" fill="#efd9b3" stroke="#1f2823" stroke-width="18"/>
+    <path d="M430 90H535V270H430Z" fill="#ead9ad" stroke="#1f2823" stroke-width="18"/>
+    <path d="M430 360H535V600H430Z" fill="#d9ecff" stroke="#1f2823" stroke-width="18"/>
+    <path d="M0 600H430V690H0Z" fill="#fff4c8" stroke="#2a7bc4" stroke-width="12" stroke-dasharray="28 18"/>
+    <path d="M120 0V-115H260V0" fill="#d9ecff" stroke="#1f2823" stroke-width="14"/>
+    <path d="M260 0V-115H430V0" fill="#d5f0e6" stroke="#1f2823" stroke-width="14"/>
+    <path d="M430 90H500" stroke="#f4ead8" stroke-width="42"/>
+    <path d="M430 360H500" stroke="#f4ead8" stroke-width="42"/>
+    <path d="M120 0H190" stroke="#f4ead8" stroke-width="42"/>
+    <path d="M260 0H340" stroke="#f4ead8" stroke-width="42"/>
+    <path d="M430 90A70 70 0 0 1 500 20" fill="none" stroke="#71827a" stroke-width="6" stroke-dasharray="12 12"/>
+    <path d="M430 360A90 90 0 0 0 520 450" fill="none" stroke="#71827a" stroke-width="6" stroke-dasharray="12 12"/>
+    <text x="215" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#7e7362">客餐厅</text>
+    <text x="215" y="348" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#7e7362">35.2 m²</text>
+    <text x="486" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#7e7362">玄关</text>
+    <text x="486" y="223" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#7e7362">3.3 m²</text>
+    <text x="486" y="510" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#5c6e7d">次卧1</text>
+    <text x="190" y="-55" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#5c6e7d">书房</text>
+    <text x="345" y="-55" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#5f8a7a">厨房</text>
+    <text x="215" y="755" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#5e6f68">阳台方向</text>
+  </g>
+</svg>

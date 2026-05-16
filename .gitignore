@@ -1,0 +1,13 @@
+node_modules/
+dist/
+server-data/
+.playwright-mcp/
+.serena/
+
+.DS_Store
+.env
+.env.*
+*.local
+
+public/reference-plan.jpeg
+living-room-layout-*.png
